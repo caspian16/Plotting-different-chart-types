@@ -1,5 +1,6 @@
 
 from matplotlib import pyplot as plt
+import numpy as np
 
 drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
 sales1 =  [91, 76, 56, 66, 52, 27]
@@ -50,4 +51,13 @@ plt.fill_between(months,y_lower,y_upper,alpha=.2)
 ax=plt.subplot()
 ax.set_xticks(months)
 ax.set_xticklabels(month_names)
+plt.show()
+
+#Creating a labeled pie chart with legends and percentages displayed to present share-of-the-total visuals
+payment_method_names = ["Card Swipe", "Cash", "Apple Pay", "Other"]
+payment_method_freqs = [270, 77, 32, 11]
+
+plt.pie(payment_method_freqs, labels =payment_method_names,autopct='%.1f%%')
+plt.axis('equal')
+plt.legend(payment_method_names)
 plt.show()
