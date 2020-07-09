@@ -1,4 +1,4 @@
-import codecademylib
+
 from matplotlib import pyplot as plt
 
 drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
@@ -22,4 +22,32 @@ plt.title('Sales of drink at 2 store locations by types')
 plt.xlabel('Drinks')
 plt.ylabel('Sales')
 plt.bar(store2_x,sales2)
+plt.show()
+
+
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+ounces_of_milk = [6, 9, 4, 0, 9, 0]
+error = [0.6, 0.9, 0.4, 0, 0.9, 0]
+
+# Plot the error bar graph here
+plt.bar(range(len(drinks)),ounces_of_milk, yerr=error, capsize=5)
+plt.title('Error in drink measurements')
+plt.xlabel('Drinks')
+plt.ylabel('Ounce of milk')
+plt.legend("drinkmeasurements")
+plt.show()
+
+#Creating a shaded value-interval/ maximum and minimal bounds for values
+months = range(12)
+month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+revenue = [16000, 14000, 17500, 19500, 21500, 21500, 22000, 23000, 20000, 19500, 18000, 16500]
+
+#your work here
+plt.plot(months, revenue)
+y_lower=[.9*y for y in revenue]
+y_upper=[1.1*y for y in revenue]
+plt.fill_between(months,y_lower,y_upper,alpha=.2)
+ax=plt.subplot()
+ax.set_xticks(months)
+ax.set_xticklabels(month_names)
 plt.show()
